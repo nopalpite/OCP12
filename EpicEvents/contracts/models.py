@@ -31,8 +31,4 @@ class Contract(models.Model):
     payment_due = models.DateField()
 
     def __str__(self):
-        if self.status:
-            stat = self.status
-        else:
-            stat = ""
-        return f"Contract #{self.id} : ({stat})"
+        return f"Contract #{self.id} : ({self.status})"

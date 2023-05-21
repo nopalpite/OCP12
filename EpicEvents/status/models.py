@@ -5,4 +5,4 @@ class Status(models.Model):
     name = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.name
+        return f"Status #{self.id}: {self.name}"
