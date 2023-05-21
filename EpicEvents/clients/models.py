@@ -18,6 +18,7 @@ class Client(models.Model):
         null=True,
         blank=True,
         limit_choices_to={"role": "sales"},
+        related_name="clients"
     )
     is_active = models.BooleanField(default=False)
 
