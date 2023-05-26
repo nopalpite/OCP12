@@ -1,7 +1,6 @@
 from django.db import models
 from users.models import User
 from clients.models import Client
-from status.models import Status
 
 # Create your models here.
 class Contract(models.Model):
@@ -21,12 +20,7 @@ class Contract(models.Model):
     )
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    status = models.ForeignKey(
-        Status,
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-    )
+    status = models.BooleanField(default=False)
     amount = models.FloatField()
     payment_due = models.DateField()
 

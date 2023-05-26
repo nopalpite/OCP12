@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'clients',
     'status',
     'contracts',
+    'events',
 ]
 
 REST_FRAMEWORK = {
