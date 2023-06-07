@@ -9,7 +9,7 @@ class Event(models.Model):
     location = models.CharField(max_length=50)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    contract = models.ForeignKey(
+    contract = models.OneToOneField(
         Contract,
         limit_choices_to={"status": True},
         on_delete=models.CASCADE,

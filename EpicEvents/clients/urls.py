@@ -5,6 +5,4 @@ from .views import ClientViewSet
 clients = routers.DefaultRouter()
 clients.register(r'clients', ClientViewSet, basename='clients')
 
-urlpatterns = [
-    path(r'', include(clients.urls))
-]
+urlpatterns = clients.urls
