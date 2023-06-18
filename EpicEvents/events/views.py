@@ -7,6 +7,11 @@ from .permissions import EventPermission
 class EventViewSet(ModelViewSet):
     serializer_class = EventSerializer
     permission_classes = [IsAuthenticated, EventPermission]
+    filterset_fields = [
+        'contract__client__last_name',
+        'contract__client__email',
+        'event_date'
+    ]
 
     def get_queryset(self):
         if self.request.user.role == "support":

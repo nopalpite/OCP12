@@ -7,6 +7,7 @@ from .permissions import ClientPermission
 class ClientViewSet(ModelViewSet):
     serializer_class = ClientSerializer
     permission_classes = [IsAuthenticated, ClientPermission]
+    filterset_fields = ['last_name', 'email']
 
     def get_queryset(self):
         if self.request.user.role == "support":
