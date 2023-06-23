@@ -15,7 +15,7 @@ git clone https://github.com/nopalpite/OCP12.git
 
 cd OCP12 
 python -m venv .env 
-env\Scripts\activate
+.env\Scripts\activate
 
 pip install -r requirements.txt
 ```
@@ -27,7 +27,7 @@ git clone https://github.com/nopalpite/OCP12.git
 
 cd OCP12 
 python -m venv .env 
-source env/bin/activate
+source .env/bin/activate
 
 pip install -r requirements.txt
 ```
