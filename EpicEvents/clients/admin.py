@@ -20,8 +20,9 @@ class ClientAdmin(admin.ModelAdmin):
         ("Sales", {"fields": ("is_active", "sales_contact")}),
         ("Info", {"fields": ("date_created", "date_updated")}),
     )
-    readonly_fields = ("date_created", "date_updated")
+    readonly_fields = ("id", "date_created", "date_updated")
     list_display = (
+        "id",
         "first_name",
         "last_name",
         "company_name",
