@@ -4,7 +4,7 @@ from django.contrib.auth.models import Group
 from .models import User
 
 class UserAdmin(BaseUserAdmin):
-    list_display = ('email', 'role', 'is_staff', 'is_superuser')
+    list_display = ('id', 'email', 'role', 'is_staff', 'is_superuser')
     list_filter = ('is_staff', 'is_superuser', 'role')
     search_fields = ('email', 'role')
     ordering = ('email',)

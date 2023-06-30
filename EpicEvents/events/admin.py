@@ -25,6 +25,7 @@ class EventAdmin(admin.ModelAdmin):
     )
     readonly_fields = ("date_created", "date_updated")
     list_display = (
+        "id",
         "name",
         "location",
         "contract",
