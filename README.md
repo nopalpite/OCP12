@@ -82,4 +82,4 @@ Following accounts have been created so you can do some  testing
 
 ## Postman documentation
 
-Soon
+[postman documentation](https://documenter.getpostman.com/view/26061791/2s93zGzdF3)
