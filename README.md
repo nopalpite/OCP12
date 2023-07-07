@@ -79,6 +79,7 @@ Following accounts have been created so you can do some  testing
 | support_user_1@gmail.com    | support_password  | support  |
 | support_user_2@gmail.com    | support_password  | support  |
 
+You can access to admin page with a manager account following this URL: http://localhost:8000/admin/users/user/
 
 ## Postman documentation
 
