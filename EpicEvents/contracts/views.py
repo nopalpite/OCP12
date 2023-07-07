@@ -7,7 +7,7 @@ from .permissions import ContractPermission
 class ContractViewSet(ModelViewSet):
     serializer_class = ContractSerializer
     permission_classes = [IsAuthenticated, ContractPermission]
-    filterset_fields = ['client__last_name', 'client__email','date_created', 'amount']
+    filterset_fields = ['client__last_name','client__email','date_created', 'amount']
 
     def get_queryset(self):
         if self.request.user.role == "support":
@@ -18,3 +18,6 @@ class ContractViewSet(ModelViewSet):
         elif self.request.user.role == "sales":
             contracts = Contract.objects.filter(sales_contact=self.request.user)
             return contracts
+        
+    def perform_create(self, serializer):
+        serializer.save(sales_contact=self.request.user)

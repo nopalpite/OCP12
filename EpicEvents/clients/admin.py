@@ -33,4 +33,4 @@ class ClientAdmin(admin.ModelAdmin):
         "sales_contact",
     )
     list_filter = ("is_active", "sales_contact")
-    search_fields = ("first_name", "last_name", "company_name", "sales_contact")
+    search_fields = ("first_name", "last_name","email","company_name", "sales_contact")

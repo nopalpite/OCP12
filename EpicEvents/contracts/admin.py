@@ -20,4 +20,4 @@ class ContractAdmin(admin.ModelAdmin):
         "status",
     )
     list_filter = ("status", "sales_contact")
-    search_fields = ("contract_number", "client__last_name")
+    search_fields = ("amount", "client__last_name")
