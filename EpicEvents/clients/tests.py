@@ -95,11 +95,21 @@ class ClientAPITestCase(APITestCase):
         assert b'john.doe@example.com' in response.content
         assert b'bob.grill@example.com' not in response.content
 
-    def test_get_client_last_name(self):
+    def test_get_client_by_last_name(self):
         self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + self.sales_token)
         Client.objects.create(**self.client_1_data)
         Client.objects.create(**self.client_2_data)
         response = self.client.get("/clients/?last_name=Doe")
+        print(response)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        assert b'john.doe@example.com' in response.content
+        assert b'bob.grill@example.com' not in response.content
+
+    def test_get_client_by_id(self):
+        self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + self.sales_token)
+        client = Client.objects.create(**self.client_1_data)
+        Client.objects.create(**self.client_2_data)
+        response = self.client.get(f"/clients/{client.pk}/")
         print(response)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         assert b'john.doe@example.com' in response.content
