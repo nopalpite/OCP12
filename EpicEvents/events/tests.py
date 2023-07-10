@@ -156,7 +156,8 @@ class ClientAPITestCase(APITestCase):
             **self.event_1_data, contract=contract_1)
         event_2 = Event.objects.create(
             **self.event_2_data, contract=contract_2)
-        response = self.client.get("/events/?contract__client__email=john.doe@example.com")
+        response = self.client.get(
+            "/events/?contract__client__email=john.doe@example.com")
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         assert b'Dubai' in response.content
         assert b'Paris' not in response.content
@@ -178,3 +179,31 @@ class ClientAPITestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         assert b'Dubai' in response.content
         assert b'Paris' not in response.content
+
+    def test_sales_user_patch_event(self):
+        self.client.credentials(
+            HTTP_AUTHORIZATION='Bearer ' + self.sales_token)
+        client = Client.objects.create(**self.client_1_data)
+        contract = Contract.objects.create(
+            **self.contract_1_data, client=client)
+        event = Event.objects.create(
+            **self.event_1_data, contract=contract)
+        response = self.client.patch(
+            f"/events/{event.pk}/", data={"location": "Moscou"})
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        assert b'Moscou' in response.content
+        assert b'Dubai' not in response.content
+
+    def test_support_user_patch_event(self):
+        self.client.credentials(
+            HTTP_AUTHORIZATION='Bearer ' + self.sales_token)
+        client = Client.objects.create(**self.client_1_data)
+        contract = Contract.objects.create(
+            **self.contract_1_data, client=client)
+        event = Event.objects.create(
+            **self.event_1_data, contract=contract)
+        response = self.client.patch(
+            f"/events/{event.pk}/", data={"location": "Moscou"})
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        assert b'Moscou' in response.content
+        assert b'Dubai' not in response.content

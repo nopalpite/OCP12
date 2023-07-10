@@ -20,14 +20,6 @@ class UserTestCase(TestCase):
             'role': 'sales',
         }
 
-    def test_create_staff_user(self):
-        user = User.objects.create_user(**self.staff_user_data)
-        self.assertEqual(user.email, self.staff_user_data['email'])
-        self.assertTrue(user.check_password(self.staff_user_data['password']))
-        self.assertEqual(user.role, self.staff_user_data['role'])
-        self.assertTrue(user.is_staff)
-        self.assertTrue(user.is_superuser)
-        self.assertTrue(user.is_active)
 
     def test_create_staff_user(self):
         user = User.objects.create_user(**self.sales_user_data)

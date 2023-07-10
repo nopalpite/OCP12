@@ -111,3 +111,17 @@ class ClientAPITestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         assert b'john.doe@example.com' in response.content
         assert b'bob.grill@example.com' not in response.content
+
+    def test_sales_user_patch_client(self):
+        self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + self.sales_token)
+        client = Client.objects.create(**self.client_1_data)
+        response = self.client.patch(f"/clients/{client.pk}/", data={"last_name": "Richard"})
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        assert b'Richard' in response.content
+        assert b'Doe' not in response.content
+    
+    def test_support_user_cannnot_patch_client(self):
+        self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + self.support_token)
+        client = Client.objects.create(**self.client_1_data)
+        response = self.client.patch(f"/clients/{client.pk}/", data={"last_name": "Richard"})
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)

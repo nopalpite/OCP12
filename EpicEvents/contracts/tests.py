@@ -166,3 +166,22 @@ class ClientAPITestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         assert b'2023-07-20' in response.content
         assert b'2023-08-12' not in response.content
+
+    def test_sales_user_patch_contract(self):
+        self.client.credentials(
+            HTTP_AUTHORIZATION='Bearer ' + self.sales_token)
+        client = Client.objects.create(**self.client_1_data)
+        contract = Contract.objects.create(**self.contract_1_data, client=client)
+        response = self.client.patch(f"/contracts/{contract.pk}/", data={"amount": 100000})
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        assert b'100000' in response.content
+        assert b'20000' not in response.content
+
+    def test_support_user_cannot_patch_contract(self):
+        self.client.credentials(
+            HTTP_AUTHORIZATION='Bearer ' + self.support_token)
+        client = Client.objects.create(**self.client_1_data)
+        contract = Contract.objects.create(**self.contract_1_data, client=client)
+        response = self.client.patch(f"/contracts/{contract.pk}/", data={"amount": 100000})
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+    
