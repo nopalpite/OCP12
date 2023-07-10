@@ -3,6 +3,8 @@ from users.models import User
 from clients.models import Client
 
 # Create your models here.
+
+
 class Contract(models.Model):
     client = models.ForeignKey(
         Client,

@@ -90,7 +90,6 @@ class ClientAPITestCase(APITestCase):
         Client.objects.create(**self.client_1_data)
         Client.objects.create(**self.client_2_data)
         response = self.client.get("/clients/?email=john.doe@example.com")
-        print(response)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         assert b'john.doe@example.com' in response.content
         assert b'bob.grill@example.com' not in response.content
@@ -100,7 +99,6 @@ class ClientAPITestCase(APITestCase):
         Client.objects.create(**self.client_1_data)
         Client.objects.create(**self.client_2_data)
         response = self.client.get("/clients/?last_name=Doe")
-        print(response)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         assert b'john.doe@example.com' in response.content
         assert b'bob.grill@example.com' not in response.content
@@ -110,7 +108,6 @@ class ClientAPITestCase(APITestCase):
         client = Client.objects.create(**self.client_1_data)
         Client.objects.create(**self.client_2_data)
         response = self.client.get(f"/clients/{client.pk}/")
-        print(response)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         assert b'john.doe@example.com' in response.content
         assert b'bob.grill@example.com' not in response.content
