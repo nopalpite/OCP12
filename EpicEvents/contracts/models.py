@@ -8,7 +8,7 @@ class Contract(models.Model):
         Client,
         on_delete=models.CASCADE,
         limit_choices_to={"is_active": True},
-        related_name="contracts"
+        related_name="contract"
     )
     sales_contact = models.ForeignKey(
         User,
