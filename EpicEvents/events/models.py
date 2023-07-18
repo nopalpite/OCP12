@@ -3,7 +3,7 @@ from contracts.models import Contract
 from status.models import Status
 from users.models import User
 
-# Create your models here.
+
 class Event(models.Model):
     name = models.CharField(max_length=50)
     location = models.CharField(max_length=50)
@@ -27,7 +27,7 @@ class Event(models.Model):
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
-        related_name="events"   
+        related_name="events"
     )
     attendees = models.PositiveIntegerField(blank=True, null=True)
     event_date = models.DateTimeField(blank=True, null=True)

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>flake8 violations: EpicEvents\clients\tests.py</title>
+      <meta http-equiv="Content-Type" value="text/html; charset=UTF-8">
+      <link rel="stylesheet" href="styles.css">
+<script>
+function bindHandler(link) {
+   var code = link.getAttribute('data-code');
+   var key = location.pathname + '#' + code;
+
+   var ul = link.parentNode.querySelector('.details');
+   if (sessionStorage[key] != 'open') {
+      ul.style.display = 'none';
+   }
+   link.addEventListener('click', function (event) {
+      if (!ul.style.display || ul.style.display == 'none') {
+         ul.style.display = 'block';
+         sessionStorage[key] = 'open';
+      } else {
+         ul.style.display = 'none';
+         sessionStorage[key] = 'closed';
+      }
+   });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+   var links = document.querySelectorAll('#index > li > a');
+   for (var i = 0; i < links.length; i++) {
+      bindHandler(links[i]);
+   }
+});
+</script>
+   </head>
+   <body>
+      <div id="masthead" class="sev-2"></div>
+      <div id="page">
+         <p id="srclink">
+            <a title="View full annotated source"
+               href="EpicEvents.clients.tests.source.html">
+               <img src="file.svg" alt="&#x2261;">
+            </a></p>
+         <h1>
+            <a href="index.html">
+               <img src="back.svg" alt="&#x2B05;">
+               EpicEvents\clients\tests.py
+            </a>
+         </h1>
+
+         <ul id="index">
+         
+         <li>
+            <a data-code="E501">
+               <span class="count sev-2">
+                  14
+               </span>
+               <strong>E501:</strong> line too long (80 > 79 characters)
+               
+                  (and 4 similar)
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <p>Line too long (80 > 79 characters):</p>
+               
+               <a href="EpicEvents.clients.tests.source.html#l59">
+                  <tt><i>59</i>         <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">credentials</span><span class="p">(</span><span class="n">HTTP_AUTHORIZATION</span><span class="o">=</span><span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">sales_token</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (90 > 79 characters):</p>
+               
+               <a href="EpicEvents.clients.tests.source.html#l60">
+                  <tt><i>60</i>         <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;clients-list&#39;</span><span class="p">),</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client_1_data</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (82 > 79 characters):</p>
+               
+               <a href="EpicEvents.clients.tests.source.html#l64">
+                  <tt><i>64</i>         <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">credentials</span><span class="p">(</span><span class="n">HTTP_AUTHORIZATION</span><span class="o">=</span><span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">support_token</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (90 > 79 characters):</p>
+               
+               <a href="EpicEvents.clients.tests.source.html#l65">
+                  <tt><i>65</i>         <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;clients-list&#39;</span><span class="p">),</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client_1_data</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (80 > 79 characters):</p>
+               
+               <a href="EpicEvents.clients.tests.source.html#l69">
+                  <tt><i>69</i>         <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">credentials</span><span class="p">(</span><span class="n">HTTP_AUTHORIZATION</span><span class="o">=</span><span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">sales_token</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (82 > 79 characters):</p>
+               
+               <a href="EpicEvents.clients.tests.source.html#l78">
+                  <tt><i>78</i>         <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">credentials</span><span class="p">(</span><span class="n">HTTP_AUTHORIZATION</span><span class="o">=</span><span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">support_token</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (87 > 79 characters):</p>
+               
+               <a href="EpicEvents.clients.tests.source.html#l82">
+                  <tt><i>82</i>         <span class="n">Event</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">event_data</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="n">event_status</span><span class="p">,</span> <span class="n">contract</span><span class="o">=</span><span class="n">contract</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (80 > 79 characters):</p>
+               
+               <a href="EpicEvents.clients.tests.source.html#l89">
+                  <tt><i>89</i>         <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">credentials</span><span class="p">(</span><span class="n">HTTP_AUTHORIZATION</span><span class="o">=</span><span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">sales_token</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (80 > 79 characters):</p>
+               
+               <a href="EpicEvents.clients.tests.source.html#l98">
+                  <tt><i>98</i>         <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">credentials</span><span class="p">(</span><span class="n">HTTP_AUTHORIZATION</span><span class="o">=</span><span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">sales_token</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (80 > 79 characters):</p>
+               
+               <a href="EpicEvents.clients.tests.source.html#l107">
+                  <tt><i>107</i>         <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">credentials</span><span class="p">(</span><span class="n">HTTP_AUTHORIZATION</span><span class="o">=</span><span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">sales_token</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (80 > 79 characters):</p>
+               
+               <a href="EpicEvents.clients.tests.source.html#l116">
+                  <tt><i>116</i>         <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">credentials</span><span class="p">(</span><span class="n">HTTP_AUTHORIZATION</span><span class="o">=</span><span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">sales_token</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (93 > 79 characters):</p>
+               
+               <a href="EpicEvents.clients.tests.source.html#l118">
+                  <tt><i>118</i>         <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/clients/</span><span class="si">{</span><span class="n">client</span><span class="o">.</span><span class="n">pk</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Richard&quot;</span><span class="p">})</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (82 > 79 characters):</p>
+               
+               <a href="EpicEvents.clients.tests.source.html#l124">
+                  <tt><i>124</i>         <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">credentials</span><span class="p">(</span><span class="n">HTTP_AUTHORIZATION</span><span class="o">=</span><span class="s1">&#39;Bearer &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">support_token</span><span class="p">)</span></tt>
+               </a>
+            </li><li>
+               
+               <p>Line too long (93 > 79 characters):</p>
+               
+               <a href="EpicEvents.clients.tests.source.html#l126">
+                  <tt><i>126</i>         <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;/clients/</span><span class="si">{</span><span class="n">client</span><span class="o">.</span><span class="n">pk</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Richard&quot;</span><span class="p">})</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="W293">
+               <span class="count sev-2">
+                  6
+               </span>
+               <strong>W293:</strong> blank line contains whitespace
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="EpicEvents.clients.tests.source.html#l12">
+                  <tt><i>12</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="EpicEvents.clients.tests.source.html#l57">
+                  <tt><i>57</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="EpicEvents.clients.tests.source.html#l62">
+                  <tt><i>62</i>         </tt>
+               </a>
+            </li><li>
+               
+               <a href="EpicEvents.clients.tests.source.html#l67">
+                  <tt><i>67</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="EpicEvents.clients.tests.source.html#l87">
+                  <tt><i>87</i>     </tt>
+               </a>
+            </li><li>
+               
+               <a href="EpicEvents.clients.tests.source.html#l122">
+                  <tt><i>122</i>     </tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E221">
+               <span class="count sev-2">
+                  1
+               </span>
+               <strong>E221:</strong> multiple spaces before operator
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="EpicEvents.clients.tests.source.html#l52">
+                  <tt><i>52</i>         <span class="bp">self</span><span class="o">.</span><span class="n">event_data</span>  <span class="o">=</span> <span class="p">{</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="E302">
+               <span class="count sev-2">
+                  1
+               </span>
+               <strong>E302:</strong> expected 2 blank lines, found 1
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="EpicEvents.clients.tests.source.html#l11">
+                  <tt><i>11</i> <span class="k">class</span> <span class="nc">ClientAPITestCase</span><span class="p">(</span><span class="n">APITestCase</span><span class="p">):</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         <li>
+            <a data-code="W292">
+               <span class="count sev-2">
+                  1
+               </span>
+               <strong>W292:</strong> no newline at end of file
+               
+            </a>
+            <ul class="details">
+            <li>
+               
+               <a href="EpicEvents.clients.tests.source.html#l127">
+                  <tt><i>127</i>         <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">status</span><span class="o">.</span><span class="n">HTTP_403_FORBIDDEN</span><span class="p">)</span></tt>
+               </a>
+            </li>
+            </ul>
+         </li>
+         
+         </ul>
+      </div>
+   </body>
+</html>

@@ -4,6 +4,7 @@ from .serializers import EventSerializer
 from .models import Event
 from .permissions import EventPermission
 
+
 class EventViewSet(ModelViewSet):
     serializer_class = EventSerializer
     permission_classes = [IsAuthenticated, EventPermission]
@@ -20,5 +21,7 @@ class EventViewSet(ModelViewSet):
             )
             return events
         elif self.request.user.role == "sales":
-            events = Event.objects.filter(contract__sales_contact=self.request.user)
+            events = Event.objects.filter(
+                contract__sales_contact=self.request.user
+            )
             return events

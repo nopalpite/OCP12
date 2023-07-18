@@ -4,6 +4,7 @@ from .serializers import ClientSerializer
 from .models import Client
 from .permissions import ClientPermission
 
+
 class ClientViewSet(ModelViewSet):
     serializer_class = ClientSerializer
     permission_classes = [IsAuthenticated, ClientPermission]
@@ -18,5 +19,3 @@ class ClientViewSet(ModelViewSet):
         elif self.request.user.role == "sales":
             clients = Client.objects.filter(sales_contact=self.request.user)
             return clients
-
-

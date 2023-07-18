@@ -7,6 +7,7 @@ ROLE = (
     ("support", "support")
 )
 
+
 class UserManager(BaseUserManager):
     def create_user(self, email, password, **extra_fields):
         email = self.normalize_email(email)
@@ -16,7 +17,7 @@ class UserManager(BaseUserManager):
         return user
 
     def create_superuser(self, email, password, **extra_fields):
-       
+
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
         extra_fields.setdefault("is_active", True)
@@ -37,8 +38,8 @@ class User(AbstractUser):
     def save(self, *args, **kwargs):
         if self.role == 'management':
             self.is_staff = True
-            self.is_superuser  = True
+            self.is_superuser = True
         super().save(*args, **kwargs)
-    
+
     def __str__(self):
         return f"{self.email} ({self.role})"

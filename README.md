@@ -90,6 +90,15 @@ python coverage run manage.py test
 ```
 ![coverage report](img/coverage_report.PNG)
 
+### flake8 report
+
+Place you in OCP1 folder then:
+
+```bash
+flake8 --format=html --htmldir=flake-report EpicEvents
+```
+![flake8 report](img/flake8_report.PNG)
+
 ## Postman documentation
 
 [postman documentation](https://documenter.getpostman.com/view/26061791/2s93zGzdF3)

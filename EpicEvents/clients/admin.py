@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Client
 
+
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
     fieldsets = (
@@ -33,4 +34,5 @@ class ClientAdmin(admin.ModelAdmin):
         "sales_contact",
     )
     list_filter = ("is_active", "sales_contact")
-    search_fields = ("first_name", "last_name","email","company_name", "sales_contact")
+    search_fields = ("first_name", "last_name", "email",
+                     "company_name", "sales_contact")
