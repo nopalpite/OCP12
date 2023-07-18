@@ -92,7 +92,7 @@ python coverage run manage.py test
 
 ### flake8 report
 
-Place you in OCP1 folder then:
+Place you in OCP12 folder then:
 
 ```bash
 flake8 --format=html --htmldir=flake-report EpicEvents
