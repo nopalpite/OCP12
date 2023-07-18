@@ -81,6 +81,15 @@ Following accounts have been created so you can do some  testing
 
 You can access to admin page with a manager account following this URL: http://localhost:8000/admin/
 
+### coverage report
+
+Place you in EpicEvents folder then:
+
+```bash
+python coverage run manage.py test
+```
+![coverage report](img/coverage_report.PNG)
+
 ## Postman documentation
 
 [postman documentation](https://documenter.getpostman.com/view/26061791/2s93zGzdF3)
